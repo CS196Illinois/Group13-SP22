@@ -1,17 +1,52 @@
 package com.example.group13;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.IntentSender;
+import android.content.ServiceConnection;
+import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.database.DatabaseErrorHandler;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 
+import android.os.Handler;
+import android.os.Looper;
+import android.os.UserHandle;
 import android.util.Log;
+import android.view.Display;
 import android.widget.TextView;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import com.spotify.android.appremote.api.ConnectionParams;
 import com.spotify.android.appremote.api.Connector;
 import com.spotify.android.appremote.api.SpotifyAppRemote;
 
 import com.spotify.protocol.types.Track;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void connected() {
         // Play a playlist
-        mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
+        mSpotifyAppRemote.getPlayerApi().play("spotify:track:5UWwZ5lm5PKu6eKsHAGxOk");
 
         // Subscribe to PlayerState
         mSpotifyAppRemote.getPlayerApi()
@@ -81,4 +116,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
 }
