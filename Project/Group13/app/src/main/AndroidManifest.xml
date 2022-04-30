@@ -3,6 +3,7 @@
     package="com.example.group13">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
 
     <application
         android:name="com.chaquo.python.android.PyApplication"
@@ -14,6 +15,9 @@
         android:theme="@style/Theme.Group13">
         <activity
             android:name=".FilterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NextActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

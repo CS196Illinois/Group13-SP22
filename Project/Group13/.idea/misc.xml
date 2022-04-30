@@ -6,10 +6,20 @@
         <entry key="..\:/Users/deanb/StudioProjects/Group13-SP22/Project/Group13/app/src/main/res/layout/activity_filter.xml" value="0.1" />
         <entry key="..\:/Users/deanb/StudioProjects/Group13-SP22/Project/Group13/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/mjzou/AndroidStudioProjects/Group132/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/Oldic_launcher_background 2.xml" value="0.103" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.103" />
+        <entry key="app/src/main/res/drawable/list_bg.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_final.xml" value="0.18840579710144928" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.18840579710144928" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.23637542724609378" />
+        <entry key="app/src/main/res/layout/activity_next.xml" value="0.23813781738281242" />
+        <entry key="app/src/main/res/layout/activity_oldmain.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_pythonintegration.xml" value="0.14207650273224043" />
+        <entry key="app/src/main/res/layout/spinner_style.xml" value="0.15070921985815602" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Python 3.8 (app)" project-jdk-type="Python SDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

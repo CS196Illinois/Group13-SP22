@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="drop_down">
+        <item
+            >Energetic</item>
+        <item
+            >Sad</item>
+        <item
+            >Calm</item>
+        <item
+            >Happy</item>
+    </string-array>
+</resources>
