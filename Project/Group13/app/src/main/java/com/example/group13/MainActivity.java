@@ -19,6 +19,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import com.google.android.material.button.MaterialButton;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -74,11 +77,22 @@ public class MainActivity extends AppCompatActivity {
         });
         MaterialButton btn = (MaterialButton) findViewById(R.id.btn);
         //; here
+
+        String songlist;
+        if (!Python.isStarted()) {
+            Python.start(new AndroidPlatform(this));
+        }
+        Python py = Python.getInstance();
+        PyObject pyobj = py.getModule("PlaylistLoop");
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Error in the name function
                 if(mood!= null && mood.getSelectedItem() != null) {
+                    PyObject obj = pyobj.callAttr("main", playlist.getText().toString(), mood.getSelectedItem().toString());
+                    songlist = obj.toString();
+                    Log.d("Here", songlist);
                     NextActivity(view);
                 } else {
 
@@ -86,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
             }
             public void NextActivity(View view) {
                 Intent i = new Intent(MainActivity.this, NextActivity.class);
+                i.putExtra("songlist", songlist[0]);
                 startActivity(i);
             }
         });

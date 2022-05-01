@@ -14,9 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Group13">
         <activity
-            android:name=".FilterActivity"
-            android:exported="false" />
-        <activity
             android:name=".NextActivity"
             android:exported="false" />
         <activity

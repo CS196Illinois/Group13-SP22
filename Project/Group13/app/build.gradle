@@ -31,7 +31,6 @@ android {
                 install "keras"
                 install "sklearn"
                 install "IPython"
-
             }
         }
     }
