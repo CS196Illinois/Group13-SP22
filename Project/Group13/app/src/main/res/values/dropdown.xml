@@ -2,12 +2,12 @@
 <resources>
     <string-array name="drop_down">
         <item
-            >Energetic</item>
+            >ENERGETIC</item>
         <item
-            >Sad</item>
+            >SAD</item>
         <item
-            >Calm</item>
+            >CALM</item>
         <item
-            >Happy</item>
+            >HAPPY</item>
     </string-array>
 </resources>

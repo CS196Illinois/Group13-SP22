@@ -61,7 +61,7 @@ public class  NextActivity extends Activity {
             View myView = getLayoutInflater().inflate(R.layout.activity_next, null);
             TextView textsong = myView.findViewById(R.id.txtsongname);
             textsong.setSelected(true);
-            textsong.setText("test");
+            textsong.setText(items[i]);
 
             return myView;
         }

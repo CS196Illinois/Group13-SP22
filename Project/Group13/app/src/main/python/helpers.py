@@ -6,7 +6,7 @@ from spotipy.oauth2 import SpotifyOAuth
 
 client_id='97090b3e521f4b6aa558430689b1a479'
 client_secret='169a1e4d496246fcbbeadd28770d1560'
-redirect_uri='https://localhost:8888/callback'
+redirect_uri='https://trial1/callback'
 username = 'CreativeGuy'
 scope = 'playlist-modify-public'
 
@@ -18,7 +18,8 @@ sp = spotipy.Spotify(client_credentials_manager=manager)
 """
 token = util.prompt_for_user_token(username,scope,client_id,client_secret,redirect_uri)
 """
-spt = spotipy.Spotify(auth=SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri, scope=scope, open_browser=False))
+token = SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri, scope=scope, open_browser=False)
+spt = spotipy.Spotify(auth=token)
 
 
 def get_albums_id(ids):

@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listView;
     String[] items;
+    String songlist;
 
     private static final String CLIENT_ID = "73ce87ec19814717914402e26595bdfe";
     private static final String REDIRECT_URI = "com.example.group13://callback";
@@ -78,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         MaterialButton btn = (MaterialButton) findViewById(R.id.btn);
         //; here
 
-        String songlist;
         if (!Python.isStarted()) {
             Python.start(new AndroidPlatform(this));
         }
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             }
             public void NextActivity(View view) {
                 Intent i = new Intent(MainActivity.this, NextActivity.class);
-                i.putExtra("songlist", songlist[0]);
+                i.putExtra("songlist", songlist);
                 startActivity(i);
             }
         });
