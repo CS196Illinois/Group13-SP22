@@ -2,6 +2,7 @@ import spotipy #spotify cred lib
 import time
 from IPython.core.display import clear_output
 from spotipy import SpotifyClientCredentials, util
+from spotipy.oauth2 import SpotifyOAuth
 
 client_id='97090b3e521f4b6aa558430689b1a479'
 client_secret='169a1e4d496246fcbbeadd28770d1560'
@@ -14,8 +15,10 @@ manager = SpotifyClientCredentials(client_id,client_secret)
 sp = spotipy.Spotify(client_credentials_manager=manager)
 
 #Credentials to access to  the Spotify User's Playlist, Favorite Songs, etc.
+"""
 token = util.prompt_for_user_token(username,scope,client_id,client_secret,redirect_uri)
-spt = spotipy.Spotify(auth=token)
+"""
+spt = spotipy.Spotify(auth=SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri, scope=scope, open_browser=False))
 
 
 def get_albums_id(ids):

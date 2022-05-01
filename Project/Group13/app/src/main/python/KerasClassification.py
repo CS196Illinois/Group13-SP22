@@ -11,14 +11,20 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+from os.path import dirname, join
 
-#Libraries to create the multiclass model
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.wrappers.scikit_learn import KerasClassifier
-from keras.utils import np_utils
 #Import tensorflow and disable the v2 behavior and eager mode
 import tensorflow as tf
+
+#Libraries to create the multiclass model
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
+from tensorflow.keras.utils import to_categorical
+
+
+
 tf.compat.v1.disable_eager_execution()
 tf.compat.v1.disable_v2_behavior()
 
@@ -28,7 +34,8 @@ from sklearn.preprocessing import LabelEncoder,MinMaxScaler
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import confusion_matrix, accuracy_score
 
-df = pd.read_csv("C:/Users/deanb/Downloads/Spotify-Machine-Learning-master/Spotify-Machine-Learning-master/data/data_moods.csv")
+filename = join(dirname(__file__), "data_moods.csv")
+df = pd.read_csv(filename)
 
 col_features = df.columns[6:-3]
 X= MinMaxScaler().fit_transform(df[col_features])
@@ -42,7 +49,7 @@ encoded_y = encoder.transform(Y)
 
 
 #Convert to  dummy (Not necessary in my case)
-dummy_y = np_utils.to_categorical(encoded_y)
+dummy_y = to_categorical(encoded_y)
 
 X_train,X_test,Y_train,Y_test = train_test_split(X,encoded_y,test_size=0.2,random_state=15)
 
